@@ -217,10 +217,9 @@ Aucune action supplémentaire n'est nécessaire.
 - `prefers-reduced-motion` respecté (animations désactivées si demandé par
   le système).
 - Images chargées en `object-fit: cover` avec transition de fondu ; prévoir
-  des exports **WebP** pour les meilleures performances.
+  des exports **WebP** pour les meilleures performances
 - SEO : title, meta description, Open Graph et données structurées générés
-  depuis `content/settings/settings.json` et `content/profile/profile.json`.
-
+  depuis `content/settings/settings.json` et `content/profile/profile.json`
 ---
 
 Des questions sur Netlify Identity, Git Gateway ou Decap CMS : consulter
