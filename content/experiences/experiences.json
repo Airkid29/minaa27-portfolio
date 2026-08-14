@@ -1,0 +1,53 @@
+{
+  "items": [
+    {
+      "structure": "New Brain Factory",
+      "role": "Communication & Marketing Digital",
+      "period": "2024 — Présent",
+      "description": "Pilotage de la communication digitale et accompagnement des campagnes marketing.",
+      "logo": "/assets/images/experiences/new-brain-factory.jpg"
+    },
+    {
+      "structure": "LA A LA",
+      "role": "Créatrice de contenu",
+      "period": "2023 — 2024",
+      "description": "Conception et production de contenus pour les réseaux sociaux de la marque.",
+      "logo": "/assets/images/experiences/la-a-la.jpg"
+    },
+    {
+      "structure": "FESLI / FESMA",
+      "role": "Créatrice de contenu",
+      "period": "2023",
+      "description": "Couverture et création de contenus pour les événements FESLI et FESMA.",
+      "logo": "/assets/images/experiences/fesli-fesma.jpg"
+    },
+    {
+      "structure": "Miabé Hackathon",
+      "role": "Community Manager",
+      "period": "2023",
+      "description": "Animation des réseaux sociaux et couverture en direct de l'événement.",
+      "logo": "/assets/images/experiences/miabe-hackathon.jpg"
+    },
+    {
+      "structure": "Collaborations startups",
+      "role": "Créatrice de contenu freelance",
+      "period": "2022 — Présent",
+      "description": "Accompagnement de plusieurs startups sur leur communication digitale.",
+      "logo": "/assets/images/experiences/startups.jpg"
+    },
+    {
+      "structure": "Vente en ligne",
+      "role": "Création de contenus & promotion",
+      "period": "2022 — Présent",
+      "description": "Production de contenus et promotion pour des projets de vente en ligne.",
+      "logo": "/assets/images/experiences/vente-en-ligne.jpg"
+    },
+    {
+      "structure": "Projets & événements",
+      "role": "Participante / créatrice de contenu",
+      "period": "2021 — Présent",
+      "description": "Participation à différents projets de communication et événements.",
+      "logo": "/assets/images/experiences/evenements.jpg"
+    }
+  ]
+}

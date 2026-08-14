@@ -1,0 +1,16 @@
+{
+  "title": "Summer Campaign",
+  "slug": "summer-campaign",
+  "category": "CONTENT",
+  "date": "2025-07",
+  "role": "Créatrice de contenu",
+  "description": "Campagne réseaux sociaux pour un lancement produit estival : direction créative, tournage et montage.",
+  "cover": "/assets/images/projects/summer-campaign-cover.jpg",
+  "gallery": [
+    "/assets/images/projects/summer-campaign-01.jpg",
+    "/assets/images/projects/summer-campaign-02.jpg"
+  ],
+  "video": "",
+  "link": "",
+  "order": 2
+}

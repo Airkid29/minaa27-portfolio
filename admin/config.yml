@@ -1,0 +1,270 @@
+backend:
+  name: git-gateway
+  branch: main
+
+# Publication directe (pas de workflow éditorial) : chaque modification
+# publiée est commit directement sur la branche "main", ce qui déclenche
+# un nouveau déploiement Netlify automatiquement.
+publish_mode: simple
+
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
+
+locale: "fr"
+
+site_url: https://minaa27.netlify.app
+display_url: https://minaa27.netlify.app
+logo_url: /assets/icons/favicon.svg
+
+collections:
+  # ------------------------------------------------------------------
+  # PROFIL — fichier unique
+  # ------------------------------------------------------------------
+  - name: "profile"
+    label: "Profil"
+    files:
+      - name: "profile"
+        label: "Mon profil"
+        file: "content/profile/profile.json"
+        fields:
+          - { label: "Nom complet", name: "name", widget: "string" }
+          - { label: "Pseudo", name: "handle", widget: "string" }
+          - { label: "Phrase d'accroche (Hero)", name: "tagline", widget: "string" }
+          - { label: "Positionnement complet", name: "positioning", widget: "string" }
+          - { label: "Petite étiquette au-dessus du titre", name: "hero_kicker", widget: "string", required: false }
+          - label: "Photo principale (Hero)"
+            name: "hero_photo"
+            widget: "image"
+            media_folder: "/assets/images/hero"
+            public_folder: "/assets/images/hero"
+          - label: "Photo — section Mon Univers"
+            name: "about_photo"
+            widget: "image"
+            media_folder: "/assets/images/about"
+            public_folder: "/assets/images/about"
+          - { label: "Biographie courte", name: "bio_short", widget: "text" }
+          - { label: "Phrase forte (citation)", name: "bio_quote", widget: "string" }
+          - { label: "Présentation détaillée", name: "bio_long", widget: "text" }
+          - label: "Mots-clés"
+            name: "keywords"
+            widget: "list"
+            field: { label: "Mot-clé", name: "keyword", widget: "string" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Téléphone", name: "phone", widget: "string" }
+          - { label: "WhatsApp", name: "whatsapp", widget: "string", required: false }
+          - { label: "Ville", name: "location", widget: "string", required: false }
+          - name: "socials"
+            label: "Réseaux sociaux"
+            widget: "object"
+            fields:
+              - { label: "Instagram (URL)", name: "instagram", widget: "string", required: false }
+              - { label: "TikTok (URL)", name: "tiktok", widget: "string", required: false }
+              - { label: "LinkedIn (URL)", name: "linkedin", widget: "string", required: false }
+          - { label: "Titre — Call to action final", name: "cta_final_title", widget: "string" }
+          - { label: "Sous-titre — Call to action final", name: "cta_final_subtitle", widget: "string" }
+
+  # ------------------------------------------------------------------
+  # COMPÉTENCES — fichier unique contenant une liste
+  # ------------------------------------------------------------------
+  - name: "skills"
+    label: "Compétences"
+    files:
+      - name: "skills"
+        label: "Liste des compétences"
+        file: "content/skills/skills.json"
+        fields:
+          - name: "items"
+            label: "Compétences"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Description courte", name: "description", widget: "text" }
+              - label: "Image (affichée au survol)"
+                name: "image"
+                widget: "image"
+                required: false
+                media_folder: "/assets/images/about"
+                public_folder: "/assets/images/about"
+
+  # ------------------------------------------------------------------
+  # SERVICES — fichier unique contenant une liste
+  # ------------------------------------------------------------------
+  - name: "services"
+    label: "Services"
+    files:
+      - name: "services"
+        label: "Liste des services"
+        file: "content/services/services.json"
+        fields:
+          - name: "items"
+            label: "Services"
+            widget: "list"
+            summary: "{{title}}"
+            fields:
+              - { label: "Titre", name: "title", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "Ordre d'affichage", name: "order", widget: "number", value_type: "int" }
+
+  # ------------------------------------------------------------------
+  # EXPÉRIENCES — fichier unique contenant une liste (timeline)
+  # ------------------------------------------------------------------
+  - name: "experiences"
+    label: "Expériences"
+    files:
+      - name: "experiences"
+        label: "Timeline d'expériences"
+        file: "content/experiences/experiences.json"
+        fields:
+          - name: "items"
+            label: "Expériences"
+            widget: "list"
+            summary: "{{structure}} — {{role}}"
+            fields:
+              - { label: "Structure", name: "structure", widget: "string" }
+              - { label: "Fonction", name: "role", widget: "string" }
+              - { label: "Période", name: "period", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - label: "Logo / image"
+                name: "logo"
+                widget: "image"
+                required: false
+                media_folder: "/assets/images/experiences"
+                public_folder: "/assets/images/experiences"
+
+  # ------------------------------------------------------------------
+  # FORMATION — fichier unique contenant une liste
+  # ------------------------------------------------------------------
+  - name: "education"
+    label: "Formation"
+    files:
+      - name: "education"
+        label: "Parcours de formation"
+        file: "content/education/education.json"
+        fields:
+          - name: "items"
+            label: "Formations"
+            widget: "list"
+            summary: "{{degree}}"
+            fields:
+              - { label: "Diplôme", name: "degree", widget: "string" }
+              - { label: "École", name: "school", widget: "string" }
+              - { label: "Période", name: "period", widget: "string" }
+
+  # ------------------------------------------------------------------
+  # PROJETS — collection en dossier : 1 fichier JSON par projet
+  # ------------------------------------------------------------------
+  - name: "projects"
+    label: "Projets"
+    folder: "content/projects"
+    create: true
+    delete: true
+    slug: "{{slug}}"
+    summary: "{{order}} · {{title}} ({{category}})"
+    filter: { field: "title", pattern: ".+" }
+    fields:
+      - { label: "Titre", name: "title", widget: "string" }
+      - { label: "Identifiant (slug)", name: "slug", widget: "string", hint: "Utilisé dans l'URL interne, sans espaces ni accents." }
+      - label: "Catégorie"
+        name: "category"
+        widget: "select"
+        options: ["PHOTO", "VIDEO", "CONTENT", "EVENTS", "COLLABORATIONS"]
+      - { label: "Date", name: "date", widget: "string", hint: "Ex : 2025-09" }
+      - { label: "Mon rôle", name: "role", widget: "string" }
+      - { label: "Description", name: "description", widget: "text" }
+      - label: "Image principale"
+        name: "cover"
+        widget: "image"
+        media_folder: "/assets/images/projects"
+        public_folder: "/assets/images/projects"
+      - label: "Galerie (plusieurs images)"
+        name: "gallery"
+        widget: "list"
+        required: false
+        field:
+          label: "Image"
+          name: "image"
+          widget: "image"
+          media_folder: "/assets/images/projects"
+          public_folder: "/assets/images/projects"
+      - { label: "Vidéo (URL YouTube / Vimeo / mp4)", name: "video", widget: "string", required: false }
+      - { label: "Lien externe", name: "link", widget: "string", required: false }
+      - { label: "Ordre d'affichage", name: "order", widget: "number", value_type: "int" }
+
+  # ------------------------------------------------------------------
+  # SECTION MODÈLE / FACE CAMÉRA — fichier unique contenant une liste
+  # ------------------------------------------------------------------
+  - name: "model"
+    label: "Section Modèle"
+    files:
+      - name: "model"
+        label: "Galerie modèle"
+        file: "content/model/model.json"
+        fields:
+          - { label: "Texte d'introduction", name: "intro", widget: "text" }
+          - name: "items"
+            label: "Photos"
+            widget: "list"
+            summary: "{{caption}}"
+            fields:
+              - label: "Image"
+                name: "image"
+                widget: "image"
+                media_folder: "/assets/images/model"
+                public_folder: "/assets/images/model"
+              - label: "Format"
+                name: "format"
+                widget: "select"
+                options:
+                  - { label: "Portrait", value: "portrait" }
+                  - { label: "Paysage", value: "landscape" }
+                  - { label: "Carré", value: "square" }
+                  - { label: "Plein écran", value: "full" }
+              - { label: "Légende", name: "caption", widget: "string", required: false }
+
+  # ------------------------------------------------------------------
+  # COLLABORATIONS — fichier unique contenant une liste
+  # ------------------------------------------------------------------
+  - name: "collaborations"
+    label: "Collaborations"
+    files:
+      - name: "collaborations"
+        label: "Structures partenaires"
+        file: "content/collaborations/collaborations.json"
+        fields:
+          - name: "items"
+            label: "Collaborations"
+            widget: "list"
+            summary: "{{name}}"
+            fields:
+              - { label: "Nom de la structure", name: "name", widget: "string" }
+              - { label: "Description", name: "description", widget: "string" }
+              - { label: "Rôle", name: "role", widget: "string", required: false }
+              - label: "Logo"
+                name: "logo"
+                widget: "image"
+                required: false
+                media_folder: "/assets/images/collaborations"
+                public_folder: "/assets/images/collaborations"
+              - { label: "Lien", name: "link", widget: "string", required: false }
+
+  # ------------------------------------------------------------------
+  # PARAMÈTRES DU SITE — SEO / réglages généraux
+  # ------------------------------------------------------------------
+  - name: "settings"
+    label: "Réglages du site"
+    files:
+      - name: "settings"
+        label: "Réglages généraux & SEO"
+        file: "content/settings/settings.json"
+        fields:
+          - { label: "Titre du site (onglet navigateur)", name: "site_title", widget: "string" }
+          - { label: "Meta description (SEO)", name: "meta_description", widget: "text" }
+          - label: "Image de partage (Open Graph)"
+            name: "og_image"
+            widget: "image"
+            media_folder: "/assets/images/hero"
+            public_folder: "/assets/images/hero"
+          - { label: "URL du site en production", name: "site_url", widget: "string" }
+          - { label: "Nom affiché dans la navigation", name: "nav_brand", widget: "string" }
+          - { label: "Texte du bouton de contact (navigation)", name: "cta_nav_label", widget: "string" }

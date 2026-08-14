@@ -1,0 +1,10 @@
+{
+  "name": "minaa27-portfolio",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Portfolio éditorial de PIENO Yendoutiene Yachmine (_minaa_27) — site statique + Decap CMS, sans base de données.",
+  "scripts": {
+    "build": "node build/generate-content-index.js",
+    "start": "npx serve . -l 8080"
+  }
+}

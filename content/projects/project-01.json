@@ -1,0 +1,17 @@
+{
+  "title": "Golden Hour",
+  "slug": "golden-hour",
+  "category": "PHOTO",
+  "date": "2025-09",
+  "role": "Modèle",
+  "description": "Série portrait en lumière naturelle, autour de la spontanéité et du mouvement.",
+  "cover": "/assets/images/projects/golden-hour-cover.jpg",
+  "gallery": [
+    "/assets/images/projects/golden-hour-01.jpg",
+    "/assets/images/projects/golden-hour-02.jpg",
+    "/assets/images/projects/golden-hour-03.jpg"
+  ],
+  "video": "",
+  "link": "",
+  "order": 1
+}
