@@ -1,24 +1,30 @@
 {
-  "name": "PIENO Yendoutiene Yachmine",
-  "handle": "_minaa_27",
-  "tagline": "Communicante polyvalente · Créatrice de contenu · Modèle photo & vidéo",
-  "positioning": "Communicante polyvalente • Créatrice de contenu • Modèle photo & vidéo • Présentatrice en devenir",
-  "hero_kicker": "Portfolio — Édition 2026",
-  "hero_photo": "/assets/images/hero/portrait-principal.jpg",
+  "cta_final_title": "Vous avez une marque, un projet, un événement ou une histoire à raconter ?",
   "about_photo": "/assets/images/about/portrait-univers.jpg",
-  "bio_short": "Je raconte des histoires avec une image, une phrase, un cadrage. Entre écriture, caméra et réseaux, je construis des contenus qui donnent envie de regarder deux fois.",
   "bio_quote": "Je ne me contente pas d'être devant la caméra, je pense ce qu'il y a derrière.",
-  "bio_long": "Diplômée en communication des entreprises, j'ai grandi entre les mots et l'image. Aujourd'hui je conçois des contenus, j'anime des marques sur les réseaux, et je pose autant que j'écris. Ce qui m'anime : donner une direction claire à une histoire, qu'elle soit portée par une marque, un événement ou mon propre visage.",
-  "keywords": ["COMMUNICATION", "IMAGE", "STORYTELLING", "CRÉATIVITÉ", "EXPRESSION"],
-  "email": "contact@minaa27.com",
-  "phone": "+228 00 00 00 00",
-  "whatsapp": "+22800000000",
-  "location": "Lomé, Togo",
+  "bio_short": "Je raconte des histoires avec une image, une phrase, un cadrage. Entre écriture, caméra et réseaux, je construis des contenus qui donnent envie de regarder deux fois.",
   "socials": {
     "instagram": "https://instagram.com/_minaa_27",
     "tiktok": "https://tiktok.com/@_minaa_27",
     "linkedin": "https://linkedin.com/in/yendoutiene-pieno"
   },
-  "cta_final_title": "Vous avez une marque, un projet, un événement ou une histoire à raconter ?",
-  "cta_final_subtitle": "Construisons quelque chose qui mérite d'être vu."
+  "handle": "_minaa_27",
+  "keywords": [
+    "COMMUNICATION",
+    "IMAGE",
+    "STORYTELLING",
+    "CRÉATIVITÉ",
+    "EXPRESSION"
+  ],
+  "name": "PIENO Yendoutiene Yachmine",
+  "hero_photo": "https://encrypted-tbn0.gstatic.com/licensed-image?q=tbn:ANd9GcRPx35rBAMea_pXtofqPkVLnYcJXNFX38B_ZP5ngjU0Lkl7QS45dhGXgFhdoOLozu7jMlB-m-oTWUDJu8H-f0MHakODL5ym40luJyu5S8xcxxIWNaDhPTja3vidLnLx6T3-9Rht34o0zQ&s=19",
+  "phone": "+228 00 00 00 00",
+  "tagline": "Communicante polyvalente · Créatrice de contenu · Modèle photo & vidéo",
+  "cta_final_subtitle": "Construisons quelque chose qui mérite d'être vu.",
+  "whatsapp": "+22800000000",
+  "bio_long": "Diplômée en communication des entreprises, j'ai grandi entre les mots et l'image. Aujourd'hui je conçois des contenus, j'anime des marques sur les réseaux, et je pose autant que j'écris. Ce qui m'anime : donner une direction claire à une histoire, qu'elle soit portée par une marque, un événement ou mon propre visage.",
+  "location": "Lomé, Togo",
+  "hero_kicker": "Portfolio — Édition ",
+  "positioning": "Communicante polyvalente • Créatrice de contenu • Modèle photo & vidéo • Présentatrice en devenir",
+  "email": "contact@minaa27.com"
 }
