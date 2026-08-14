@@ -1,0 +1,107 @@
+{
+  "generatedAt": "2026-08-14T19:51:35.227Z",
+  "items": [
+    {
+      "file": "project-01.json",
+      "title": "Golden Hour",
+      "slug": "golden-hour",
+      "category": "PHOTO",
+      "date": "2025-09",
+      "role": "Modèle",
+      "description": "Série portrait en lumière naturelle, autour de la spontanéité et du mouvement.",
+      "cover": "/assets/images/projects/golden-hour-cover.jpg",
+      "gallery": [
+        "/assets/images/projects/golden-hour-01.jpg",
+        "/assets/images/projects/golden-hour-02.jpg",
+        "/assets/images/projects/golden-hour-03.jpg"
+      ],
+      "video": "",
+      "link": "",
+      "order": 1
+    },
+    {
+      "file": "project-02.json",
+      "title": "Summer Campaign",
+      "slug": "summer-campaign",
+      "category": "CONTENT",
+      "date": "2025-07",
+      "role": "Créatrice de contenu",
+      "description": "Campagne réseaux sociaux pour un lancement produit estival : direction créative, tournage et montage.",
+      "cover": "/assets/images/projects/summer-campaign-cover.jpg",
+      "gallery": [
+        "/assets/images/projects/summer-campaign-01.jpg",
+        "/assets/images/projects/summer-campaign-02.jpg"
+      ],
+      "video": "",
+      "link": "",
+      "order": 2
+    },
+    {
+      "file": "project-03.json",
+      "title": "FESLI — Couverture Live",
+      "slug": "fesli-couverture-live",
+      "category": "EVENTS",
+      "date": "2025-03",
+      "role": "Créatrice de contenu",
+      "description": "Couverture en direct du festival FESLI : stories, capsules vidéo et interviews.",
+      "cover": "/assets/images/projects/fesli-cover.jpg",
+      "gallery": [
+        "/assets/images/projects/fesli-01.jpg",
+        "/assets/images/projects/fesli-02.jpg"
+      ],
+      "video": "",
+      "link": "",
+      "order": 3
+    },
+    {
+      "file": "project-04.json",
+      "title": "Studio Motion",
+      "slug": "studio-motion",
+      "category": "VIDEO",
+      "date": "2025-05",
+      "role": "Modèle vidéo",
+      "description": "Capsule vidéo en studio, jeu de lumière et expression corporelle.",
+      "cover": "/assets/images/projects/studio-motion-cover.jpg",
+      "gallery": [
+        "/assets/images/projects/studio-motion-01.jpg"
+      ],
+      "video": "",
+      "link": "",
+      "order": 4
+    },
+    {
+      "file": "project-05.json",
+      "title": "New Brain Factory x Minaa",
+      "slug": "new-brain-factory-x-minaa",
+      "category": "COLLABORATIONS",
+      "date": "2025-01",
+      "role": "Communication & Marketing Digital",
+      "description": "Collaboration continue autour de la stratégie de contenu et de la présence digitale.",
+      "cover": "/assets/images/projects/nbf-cover.jpg",
+      "gallery": [
+        "/assets/images/projects/nbf-01.jpg"
+      ],
+      "video": "",
+      "link": "",
+      "order": 5
+    },
+    {
+      "file": "project-06.json",
+      "title": "Lookbook Lifestyle",
+      "slug": "lookbook-lifestyle",
+      "category": "PHOTO",
+      "date": "2024-11",
+      "role": "Modèle",
+      "description": "Lookbook mode et lifestyle en extérieur urbain.",
+      "cover": "/assets/images/projects/lookbook-cover.jpg",
+      "gallery": [
+        "/assets/images/projects/lookbook-01.jpg",
+        "/assets/images/projects/lookbook-02.jpg",
+        "/assets/images/projects/lookbook-03.jpg"
+      ],
+      "video": "",
+      "link": "",
+      "order": 6
+    }
+  ]
+}

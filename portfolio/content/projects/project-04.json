@@ -1,0 +1,15 @@
+{
+  "title": "Studio Motion",
+  "slug": "studio-motion",
+  "category": "VIDEO",
+  "date": "2025-05",
+  "role": "Modèle vidéo",
+  "description": "Capsule vidéo en studio, jeu de lumière et expression corporelle.",
+  "cover": "/assets/images/projects/studio-motion-cover.jpg",
+  "gallery": [
+    "/assets/images/projects/studio-motion-01.jpg"
+  ],
+  "video": "",
+  "link": "",
+  "order": 4
+}
