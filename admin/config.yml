@@ -2,6 +2,11 @@ backend:
   name: git-gateway
   branch: main
 
+# Configuration d'authentification via Netlify Identity
+# (les utilisateurs sont gérés dans l'interface Netlify > Identity)
+identity:
+  gateway: true
+
 # Publication directe (pas de workflow éditorial) : chaque modification
 # publiée est commit directement sur la branche "main", ce qui déclenche
 # un nouveau déploiement Netlify automatiquement.

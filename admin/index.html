@@ -18,12 +18,21 @@
   <script src="https://unpkg.com/decap-cms@^3/dist/decap-cms.js"></script>
 
   <script>
-    // Redirige automatiquement vers /admin/ après une invitation par e-mail
-    // ou une confirmation de compte, comme recommandé par Netlify Identity.
+    // Gestion complète des événements Netlify Identity :
+    // - Invitation acceptée → redirection /admin/
+    // - Récupération de mot de passe → redirection /admin/
+    // - Connexion classique → redirection /admin/
+    // - Confirmation d'email → redirection /admin/
     if (window.netlifyIdentity) {
-      window.netlifyIdentity.on("init", (user) => {
+      window.netlifyIdentity.on("init", function(user) {
         if (!user) {
-          window.netlifyIdentity.on("login", () => {
+          window.netlifyIdentity.on("login", function() {
+            document.location.href = "/admin/";
+          });
+          window.netlifyIdentity.on("signup", function() {
+            document.location.href = "/admin/";
+          });
+          window.netlifyIdentity.on("passwordRecovery", function() {
             document.location.href = "/admin/";
           });
         }

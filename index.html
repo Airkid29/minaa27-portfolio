@@ -283,6 +283,28 @@
     </div>
   </div>
 
+  <!-- Netlify Identity widget — OBLIGATOIRE sur la page d'accueil pour
+       intercepter les tokens des e-mails (invitation, récupération MDP,
+       confirmation). Sans ça, cliquer sur un lien de réinitialisation
+       redirige vers le portfolio sans rien faire. -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", function(user) {
+        if (!user) {
+          // Après connexion réussie → aller en admin
+          window.netlifyIdentity.on("login", function() {
+            document.location.href = "/admin/";
+          });
+          // Après acceptation d'une invitation → aller en admin
+          window.netlifyIdentity.on("signup", function() {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+
   <script src="js/content.js"></script>
   <script src="js/portfolio.js"></script>
   <script src="js/main.js"></script>
