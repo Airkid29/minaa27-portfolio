@@ -15,12 +15,6 @@ publish_mode: simple
 media_folder: "assets/images/uploads"
 public_folder: "/assets/images/uploads"
 
-# Nombre maximum de caractères pour le nom de fichier média uploadé.
-# (valeur par défaut très haute, on la réduit pour éviter certains
-# bugs de l'interface Decap avec des noms trop longs.)
-media_library:
-  max_file_size: 5120000
-
 locale: "fr"
 
 site_url: https://minaa27.netlify.app
