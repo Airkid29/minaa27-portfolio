@@ -13,22 +13,22 @@
     },
     {
       "image": "/assets/images/model/model-03.jpg",
-      "format": "landscape",
+      "format": "full",
       "caption": "Extérieur — golden hour"
     },
     {
-      "image": "/assets/images/model/model-04.jpg",
+      "image": "https://i.postimg.cc/t4cY7Cw9/IMG-8801-JPG.jpg",
       "format": "portrait",
       "caption": "Mode — lookbook urbain"
     },
     {
-      "image": "/assets/images/model/model-05.jpg",
-      "format": "full",
+      "image": "https://i.postimg.cc/wj4sJky9/IMG-2380-JPG.jpg",
+      "format": "square",
       "caption": "Événementiel — présentation live"
     },
     {
-      "image": "/assets/images/model/model-06.jpg",
-      "format": "square",
+      "image": "https://i.postimg.cc/K80tf2Vc/IMG-7425-JPG.jpg",
+      "format": "portrait",
       "caption": "Lifestyle — quotidien mis en scène"
     }
   ]
