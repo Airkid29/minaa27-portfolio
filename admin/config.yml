@@ -12,8 +12,11 @@ identity:
 # un nouveau déploiement Netlify automatiquement.
 publish_mode: simple
 
-media_folder: "assets/images/uploads"
-public_folder: "/assets/images/uploads"
+# IMPORTANT — les images ne sont PLUS uploadées via Decap CMS.
+# Héberge tes images sur un service tiers (Cloudinary, Imgur, PostImage,
+# Google Photos avec lien direct, etc.), colle simplement l'URL directe
+# (qui se termine par .jpg/.png/.webp) dans les champs correspondants.
+# Plus de problème de taille de fichier ni d'upload qui échoue.
 
 locale: "fr"
 
@@ -37,16 +40,14 @@ collections:
           - { label: "Phrase d'accroche (Hero)", name: "tagline", widget: "string" }
           - { label: "Positionnement complet", name: "positioning", widget: "string" }
           - { label: "Petite étiquette au-dessus du titre", name: "hero_kicker", widget: "string", required: false }
-          - label: "Photo principale (Hero)"
+          - label: "URL — Photo principale (Hero)"
             name: "hero_photo"
-            widget: "image"
-            media_folder: "assets/images/hero"
-            public_folder: "/assets/images/hero"
-          - label: "Photo — section Mon Univers"
+            widget: "string"
+            hint: "URL directe (https://… en .jpg/.png/.webp). Ex : héberge sur PostImage.org ou Cloudinary, colle le lien direct ici."
+          - label: "URL — Photo section « Mon Univers »"
             name: "about_photo"
-            widget: "image"
-            media_folder: "assets/images/about"
-            public_folder: "/assets/images/about"
+            widget: "string"
+            hint: "URL directe de l'image. Héberge-la en ligne puis colle le lien."
           - { label: "Biographie courte", name: "bio_short", widget: "text" }
           - { label: "Phrase forte (citation)", name: "bio_quote", widget: "string" }
           - { label: "Présentation détaillée", name: "bio_long", widget: "text" }
@@ -56,7 +57,7 @@ collections:
             field: { label: "Mot-clé", name: "keyword", widget: "string" }
           - { label: "Email", name: "email", widget: "string" }
           - { label: "Téléphone", name: "phone", widget: "string" }
-          - { label: "WhatsApp", name: "whatsapp", widget: "string", required: false }
+          - { label: "WhatsApp", name: "whatsapp", widget: "string", required: false, hint: "Numéro international, ex : 22870123456" }
           - { label: "Ville", name: "location", widget: "string", required: false }
           - name: "socials"
             label: "Réseaux sociaux"
@@ -85,12 +86,11 @@ collections:
             fields:
               - { label: "Titre", name: "title", widget: "string" }
               - { label: "Description courte", name: "description", widget: "text" }
-              - label: "Image (affichée au survol)"
+              - label: "URL — Image (affichée au survol)"
                 name: "image"
-                widget: "image"
+                widget: "string"
                 required: false
-                media_folder: "assets/images/about"
-                public_folder: "/assets/images/about"
+                hint: "URL directe de l'image (optionnel)."
 
   # ------------------------------------------------------------------
   # SERVICES — fichier unique contenant une liste
@@ -128,14 +128,13 @@ collections:
             fields:
               - { label: "Structure", name: "structure", widget: "string" }
               - { label: "Fonction", name: "role", widget: "string" }
-              - { label: "Période", name: "period", widget: "string" }
+              - { label: "Période", name: "period", widget: "string", hint: "Ex : 2024 — 2025" }
               - { label: "Description", name: "description", widget: "text" }
-              - label: "Logo / image"
+              - label: "URL — Logo / image"
                 name: "logo"
-                widget: "image"
+                widget: "string"
                 required: false
-                media_folder: "assets/images/experiences"
-                public_folder: "/assets/images/experiences"
+                hint: "URL directe du logo (optionnel)."
 
   # ------------------------------------------------------------------
   # FORMATION — fichier unique contenant une liste
@@ -154,7 +153,7 @@ collections:
             fields:
               - { label: "Diplôme", name: "degree", widget: "string" }
               - { label: "École", name: "school", widget: "string" }
-              - { label: "Période", name: "period", widget: "string" }
+              - { label: "Période", name: "period", widget: "string", hint: "Ex : 2020 — 2023" }
 
   # ------------------------------------------------------------------
   # PROJETS — collection en dossier : 1 fichier JSON par projet
@@ -169,7 +168,7 @@ collections:
     filter: { field: "title", pattern: ".+" }
     fields:
       - { label: "Titre", name: "title", widget: "string" }
-      - { label: "Identifiant (slug)", name: "slug", widget: "string", hint: "Utilisé dans l'URL interne, sans espaces ni accents." }
+      - { label: "Identifiant (slug)", name: "slug", widget: "string", hint: "Utilisé dans l'URL interne, sans espaces ni accents. Ex : shooting-ete-2025" }
       - label: "Catégorie"
         name: "category"
         widget: "select"
@@ -177,21 +176,19 @@ collections:
       - { label: "Date", name: "date", widget: "string", hint: "Ex : 2025-09" }
       - { label: "Mon rôle", name: "role", widget: "string" }
       - { label: "Description", name: "description", widget: "text" }
-      - label: "Image principale"
+      - label: "URL — Image principale (cover)"
         name: "cover"
-        widget: "image"
-        media_folder: "assets/images/projects"
-        public_folder: "/assets/images/projects"
+        widget: "string"
+        hint: "URL directe de l'image. Format portrait recommandé (4/5)."
       - label: "Galerie (plusieurs images)"
         name: "gallery"
         widget: "list"
         required: false
         field:
-          label: "Image"
+          label: "URL — Image"
           name: "image"
-          widget: "image"
-          media_folder: "assets/images/projects"
-          public_folder: "/assets/images/projects"
+          widget: "string"
+          hint: "URL directe d'une image de galerie."
       - { label: "Vidéo (URL YouTube / Vimeo / mp4)", name: "video", widget: "string", required: false }
       - { label: "Lien externe", name: "link", widget: "string", required: false }
       - { label: "Ordre d'affichage", name: "order", widget: "number", value_type: "int" }
@@ -212,11 +209,10 @@ collections:
             widget: "list"
             summary: "{{caption}}"
             fields:
-              - label: "Image"
+              - label: "URL — Image"
                 name: "image"
-                widget: "image"
-                media_folder: "assets/images/model"
-                public_folder: "/assets/images/model"
+                widget: "string"
+                hint: "URL directe de la photo."
               - label: "Format"
                 name: "format"
                 widget: "select"
@@ -245,12 +241,11 @@ collections:
               - { label: "Nom de la structure", name: "name", widget: "string" }
               - { label: "Description", name: "description", widget: "string" }
               - { label: "Rôle", name: "role", widget: "string", required: false }
-              - label: "Logo"
+              - label: "URL — Logo"
                 name: "logo"
-                widget: "image"
+                widget: "string"
                 required: false
-                media_folder: "assets/images/collaborations"
-                public_folder: "/assets/images/collaborations"
+                hint: "URL directe du logo (carré de préférence)."
               - { label: "Lien", name: "link", widget: "string", required: false }
 
   # ------------------------------------------------------------------
@@ -265,11 +260,10 @@ collections:
         fields:
           - { label: "Titre du site (onglet navigateur)", name: "site_title", widget: "string" }
           - { label: "Meta description (SEO)", name: "meta_description", widget: "text" }
-          - label: "Image de partage (Open Graph)"
+          - label: "URL — Image de partage (Open Graph)"
             name: "og_image"
-            widget: "image"
-            media_folder: "assets/images/hero"
-            public_folder: "/assets/images/hero"
+            widget: "string"
+            hint: "URL directe de l'image (1200x630 px recommandé pour les partages Facebook/LinkedIn)."
           - { label: "URL du site en production", name: "site_url", widget: "string" }
           - { label: "Nom affiché dans la navigation", name: "nav_brand", widget: "string" }
           - { label: "Texte du bouton de contact (navigation)", name: "cta_nav_label", widget: "string" }
