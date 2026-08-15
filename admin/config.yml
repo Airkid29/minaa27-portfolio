@@ -12,11 +12,13 @@ identity:
 # un nouveau déploiement Netlify automatiquement.
 publish_mode: simple
 
-# IMPORTANT — les images ne sont PLUS uploadées via Decap CMS.
-# Héberge tes images sur un service tiers (Cloudinary, Imgur, PostImage,
-# Google Photos avec lien direct, etc.), colle simplement l'URL directe
-# (qui se termine par .jpg/.png/.webp) dans les champs correspondants.
-# Plus de problème de taille de fichier ni d'upload qui échoue.
+# ⚠️ Ces champs media_folder / public_folder sont OBLIGATOIRES pour Decap CMS
+# (même si on n'utilise PLUS les uploads d'images intégrés). Ils permettent
+# à Decap de démarrer correctement. Le vrai mode d'emploi pour les images :
+# héberge tes photos sur Cloudinary / PostImage.org / Imgur et colle l'URL
+# directe (https://… .jpg/.png/.webp) dans les champs « URL — Image… ».
+media_folder: "assets/images/uploads"
+public_folder: "/assets/images/uploads"
 
 locale: "fr"
 
