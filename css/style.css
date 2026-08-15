@@ -368,6 +368,10 @@ section.on-dark .btn-ghost:hover{ background: var(--ivory); color: var(--black);
   aspect-ratio: 3/4;
   border: 1px solid var(--line);
 }
+.hero-photo-wrap .media-frame{
+  width: 100%;
+  height: 100%;
+}
 .hero-photo-wrap .frame-index{
   position: absolute; top: 1rem; right: 1rem;
   font-family: var(--font-mono);
