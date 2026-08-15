@@ -1,0 +1,45 @@
+{
+  "intro": "Mes collaborations vidéo — des partenariats conçus, tournés et montés de A à Z.",
+  "items": [
+    {
+      "title": "Womb Tea — Auris Bien-Être (1)",
+      "partner": "Auris Bien-Être",
+      "description": "Vidéo TikTok sur les douleurs pendant les règles et les plantes qui aident (Womb Tea).",
+      "tiktok_url": "https://www.tiktok.com/@auris.bien_etre/video/7671716931916942600",
+      "cta_label": "Voir sur TikTok",
+      "order": 1
+    },
+    {
+      "title": "Womb Tea — Auris Bien-Être (2)",
+      "partner": "Auris Bien-Être",
+      "description": "Deuxième contenu TikTok pour Womb Tea sur les douleurs menstruelles.",
+      "tiktok_url": "https://www.tiktok.com/@auris.bien_etre/video/7618550507627400455",
+      "cta_label": "Voir sur TikTok",
+      "order": 2
+    },
+    {
+      "title": "Formation montage vidéo",
+      "partner": "New Brain Factory",
+      "description": "Vidéo en partenariat pour l'appel à formation au montage vidéo.",
+      "tiktok_url": "https://www.tiktok.com/@newbrainfactory/video/7584760713323875596",
+      "cta_label": "Voir sur TikTok",
+      "order": 3
+    },
+    {
+      "title": "Shooting — Freeman Images",
+      "partner": "Freeman Images",
+      "description": "Vidéo en partenariat pour la réduction de tarifs sur les shootings photos.",
+      "tiktok_url": "https://www.tiktok.com/@freeman_le_leger/video/7632068763944242453",
+      "cta_label": "Voir sur TikTok",
+      "order": 4
+    },
+    {
+      "title": "Concours Miss Université Togo",
+      "partner": "Miss Université Togo",
+      "description": "Vidéo d'annonce du concours Miss Université Togo.",
+      "tiktok_url": "https://www.tiktok.com/@_mina_27/video/7622957097868725525",
+      "cta_label": "Voir sur TikTok",
+      "order": 5
+    }
+  ]
+}

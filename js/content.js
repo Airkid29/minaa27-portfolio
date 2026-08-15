@@ -18,6 +18,7 @@
     education: "/content/education/education.json",
     collaborations: "/content/collaborations/collaborations.json",
     model: "/content/model/model.json",
+    realisations: "/content/realisations/realisations.json",
     settings: "/content/settings/settings.json",
   };
 
@@ -34,25 +35,10 @@
     }
   }
 
-  /**
-   * Charge la liste des projets. En production, un index est généré au
-   * build (voir build/generate-content-index.js). En développement local
-   * sans étape de build, on retombe sur une détection séquentielle des
-   * fichiers project-01.json, project-02.json, etc.
-   */
-  async function loadProjects() {
-    const index = await fetchJSON("/content/projects/index.json");
-    if (index && Array.isArray(index.items)) {
-      return index.items.sort((a, b) => (a.order ?? 999) - (b.order ?? 999));
-    }
-
-    // Fallback local (sans build) : tente project-01.json à project-30.json
-    const attempts = Array.from({ length: 30 }, (_, i) => {
-      const n = String(i + 1).padStart(2, "0");
-      return fetchJSON(`/content/projects/project-${n}.json`);
-    });
-    const results = await Promise.all(attempts);
-    return results.filter(Boolean).sort((a, b) => (a.order ?? 999) - (b.order ?? 999));
+  function getTikTokId(url) {
+    if (!url) return null;
+    const match = url.match(/\/video\/(\d+)/);
+    return match ? match[1] : null;
   }
 
   function setImage(imgEl, src, alt) {
@@ -281,43 +267,54 @@
     });
   }
 
-  function renderProjects(items) {
+  function renderRealisations(data) {
+    const introEl = document.getElementById("realisations-intro");
+    if (introEl) introEl.textContent = (data && data.intro) || "";
+
     const wrap = document.getElementById("project-grid");
+    if (!wrap) return;
     wrap.innerHTML = "";
-    items.forEach((project) => {
-      const card = el("article", "project-card reveal");
-      card.dataset.category = project.category || "ALL";
+
+    if (!data || !Array.isArray(data.items)) return;
+
+    const sorted = [...data.items].sort((a, b) => (a.order ?? 999) - (b.order ?? 999));
+    sorted.forEach((item) => {
+      const videoId = getTikTokId(item.tiktok_url);
+      if (!videoId) return;
+
+      const card = el("article", "tiktok-card reveal");
       card.innerHTML = `
-        <div class="media-frame">
-          <img alt="${project.title}" />
-          <span class="frame-tag">Photo à ajouter depuis /admin</span>
+        <div class="tiktok-player-wrapper">
+          <iframe 
+            src="https://www.tiktok.com/embed/v2/${videoId}" 
+            class="tiktok-iframe" 
+            loading="lazy" 
+            allowfullscreen 
+            scrolling="no"
+            title="${item.title || "Vidéo TikTok"}"
+          ></iframe>
         </div>
-        <div class="project-card-meta">
-          <h3>${project.title}</h3>
-          <span>${project.category || ""} · ${formatProjectDate(project.date)}</span>
+        <div class="tiktok-meta">
+          <span class="tiktok-partner">${item.partner || ""}</span>
+          <h3 class="tiktok-title">${item.title || ""}</h3>
+          <p class="tiktok-description">${item.description || ""}</p>
+          <a href="${item.tiktok_url}" target="_blank" rel="noopener" class="btn btn-ghost tiktok-cta">
+            <span>${item.cta_label || "Voir sur TikTok"}</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4" style="width:12px;height:12px;"><path d="M7 17L17 7M7 7h10v10"/></svg>
+          </a>
         </div>
       `;
-      setImage(card.querySelector("img"), project.cover, project.title);
-      card.addEventListener("click", () => window.PortfolioModal && window.PortfolioModal.open(project));
       wrap.appendChild(card);
     });
 
-    window.PORTFOLIO_PROJECTS = items;
+    window.PORTFOLIO_PROJECTS = sorted;
     document.dispatchEvent(new CustomEvent("projects:rendered"));
-  }
-
-  function formatProjectDate(dateStr) {
-    if (!dateStr) return "";
-    const [year, month] = dateStr.split("-");
-    const months = ["JAN","FÉV","MAR","AVR","MAI","JUIN","JUIL","AOÛT","SEP","OCT","NOV","DÉC"];
-    const idx = parseInt(month, 10) - 1;
-    return months[idx] ? `${months[idx]} ${year}` : dateStr;
   }
 
   async function init() {
     document.getElementById("footer-year").textContent = new Date().getFullYear();
 
-    const [profile, settings, skills, services, experiences, education, collaborations, model, projects] =
+    const [profile, settings, skills, services, experiences, education, collaborations, model, realisations] =
       await Promise.all([
         fetchJSON(CONTENT.profile),
         fetchJSON(CONTENT.settings),
@@ -327,7 +324,7 @@
         fetchJSON(CONTENT.education),
         fetchJSON(CONTENT.collaborations),
         fetchJSON(CONTENT.model),
-        loadProjects(),
+        fetchJSON(CONTENT.realisations),
       ]);
 
     renderProfile(profile);
@@ -338,7 +335,7 @@
     renderEducation(education);
     renderCollaborations(collaborations);
     renderModel(model);
-    renderProjects(projects);
+    renderRealisations(realisations);
 
     document.dispatchEvent(new CustomEvent("content:ready"));
   }

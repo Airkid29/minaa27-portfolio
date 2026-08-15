@@ -158,42 +158,27 @@ collections:
               - { label: "Période", name: "period", widget: "string", hint: "Ex : 2020 — 2023" }
 
   # ------------------------------------------------------------------
-  # PROJETS — collection en dossier : 1 fichier JSON par projet
+  # RÉALISATIONS (VIDÉOS) — fichier unique contenant une liste de partenariats
   # ------------------------------------------------------------------
-  - name: "projects"
-    label: "Projets"
-    folder: "content/projects"
-    create: true
-    delete: true
-    slug: "{{slug}}"
-    summary: "{{order}} · {{title}} ({{category}})"
-    filter: { field: "title", pattern: ".+" }
-    fields:
-      - { label: "Titre", name: "title", widget: "string" }
-      - { label: "Identifiant (slug)", name: "slug", widget: "string", hint: "Utilisé dans l'URL interne, sans espaces ni accents. Ex : shooting-ete-2025" }
-      - label: "Catégorie"
-        name: "category"
-        widget: "select"
-        options: ["PHOTO", "VIDEO", "CONTENT", "EVENTS", "COLLABORATIONS"]
-      - { label: "Date", name: "date", widget: "string", hint: "Ex : 2025-09" }
-      - { label: "Mon rôle", name: "role", widget: "string" }
-      - { label: "Description", name: "description", widget: "text" }
-      - label: "URL — Image principale (cover)"
-        name: "cover"
-        widget: "string"
-        hint: "URL directe de l'image. Format portrait recommandé (4/5)."
-      - label: "Galerie (plusieurs images)"
-        name: "gallery"
-        widget: "list"
-        required: false
-        field:
-          label: "URL — Image"
-          name: "image"
-          widget: "string"
-          hint: "URL directe d'une image de galerie."
-      - { label: "Vidéo (URL YouTube / Vimeo / mp4)", name: "video", widget: "string", required: false }
-      - { label: "Lien externe", name: "link", widget: "string", required: false }
-      - { label: "Ordre d'affichage", name: "order", widget: "number", value_type: "int" }
+  - name: "realisations"
+    label: "Réalisations (Vidéos)"
+    files:
+      - name: "realisations"
+        label: "Vidéos de partenariats"
+        file: "content/realisations/realisations.json"
+        fields:
+          - { label: "Texte d'introduction", name: "intro", widget: "text" }
+          - name: "items"
+            label: "Vidéos"
+            widget: "list"
+            summary: "{{title}} ({{partner}})"
+            fields:
+              - { label: "Titre de la vidéo", name: "title", widget: "string" }
+              - { label: "Partenaire / Marque", name: "partner", widget: "string" }
+              - { label: "Description", name: "description", widget: "text" }
+              - { label: "URL de la vidéo TikTok", name: "tiktok_url", widget: "string" }
+              - { label: "Libellé du bouton (CTA)", name: "cta_label", widget: "string", default: "Voir sur TikTok" }
+              - { label: "Ordre d'affichage", name: "order", widget: "number", value_type: "int" }
 
   # ------------------------------------------------------------------
   # SECTION MODÈLE / FACE CAMÉRA — fichier unique contenant une liste
