@@ -1,11 +1,35 @@
 {
   "intro": "Devant l'objectif, je raconte aussi. Une expression, une posture, un cadrage : autant de façons de porter une image de marque.",
   "items": [
-    { "image": "/assets/images/model/model-01.jpg", "format": "portrait", "caption": "Studio — lumière naturelle" },
-    { "image": "/assets/images/model/model-02.jpg", "format": "square", "caption": "Editorial — noir & blanc" },
-    { "image": "/assets/images/model/model-03.jpg", "format": "landscape", "caption": "Extérieur — golden hour" },
-    { "image": "/assets/images/model/model-04.jpg", "format": "portrait", "caption": "Mode — lookbook urbain" },
-    { "image": "/assets/images/model/model-05.jpg", "format": "full", "caption": "Événementiel — présentation live" },
-    { "image": "/assets/images/model/model-06.jpg", "format": "square", "caption": "Lifestyle — quotidien mis en scène" }
+    {
+      "image": "https://i.postimg.cc/pdv3fKg6/IMG-2372-JPG.jpg",
+      "format": "portrait",
+      "caption": ""
+    },
+    {
+      "image": "https://i.postimg.cc/G37gh1tN/IMG-8797-JPG-(1)-(1).jpg",
+      "format": "portrait",
+      "caption": "Editorial — noir & blanc"
+    },
+    {
+      "image": "https://i.postimg.cc/vZnYNrHX/IMG-8798-JPG.jpg",
+      "format": "portrait",
+      "caption": "Extérieur — golden hour"
+    },
+    {
+      "image": "https://i.postimg.cc/t4cY7Cw9/IMG-8801-JPG.jpg",
+      "format": "portrait",
+      "caption": "Mode — lookbook urbain"
+    },
+    {
+      "image": "https://i.postimg.cc/wj4sJky9/IMG-2380-JPG.jpg",
+      "format": "portrait",
+      "caption": "Événementiel — présentation live"
+    },
+    {
+      "image": "https://i.postimg.cc/K80tf2Vc/IMG-7425-JPG.jpg",
+      "format": "portrait",
+      "caption": "Lifestyle — quotidien mis en scène"
+    }
   ]
 }
