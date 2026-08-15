@@ -4,14 +4,14 @@
       "name": "New Brain Factory",
       "description": "Communication & stratégie digitale",
       "role": "Partenaire régulière",
-      "logo": "/assets/images/collaborations/img_5200.jpg.jpeg",
+      "logo": "https://www.newbrainfactory.com/favicon-96x96.png",
       "link": ""
     },
     {
       "name": "LA A LA",
       "description": "Création de contenu",
       "role": "Créatrice de contenu",
-      "logo": "/assets/images/collaborations/la-a-la.jpg",
+      "logo": "https://media.licdn.com/dms/image/v2/D560BAQFu6Z2L8GRn9w/company-logo_200_200/B56ZYHLAS2GoAI-/0/1743877048188?e=2147483647&v=beta&t=riNVRzFDZZDcwt3Y8ZppRQ5eSItym56uMbAdfHkLxF8",
       "link": ""
     },
     {
@@ -25,7 +25,7 @@
       "name": "Miabé Hackathon",
       "description": "Événement tech & innovation",
       "role": "Community manager",
-      "logo": "/assets/images/collaborations/miabe.jpg",
+      "logo": "https://miabehackathon.com/_next/image?url=%2Fassets%2Fimages%2Flogo.png&w=1920&q=75",
       "link": ""
     }
   ]
