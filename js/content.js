@@ -11,15 +11,15 @@
   "use strict";
 
   const CONTENT = {
-    profile: "/content/profile/profile.json",
-    services: "/content/services/services.json",
-    skills: "/content/skills/skills.json",
-    experiences: "/content/experiences/experiences.json",
-    education: "/content/education/education.json",
-    collaborations: "/content/collaborations/collaborations.json",
-    model: "/content/model/model.json",
-    realisations: "/content/realisations/realisations.json",
-    settings: "/content/settings/settings.json",
+    profile: "content/profile/profile.json",
+    services: "content/services/services.json",
+    skills: "content/skills/skills.json",
+    experiences: "content/experiences/experiences.json",
+    education: "content/education/education.json",
+    collaborations: "content/collaborations/collaborations.json",
+    model: "content/model/model.json",
+    realisations: "content/realisations/realisations.json",
+    settings: "content/settings/settings.json",
   };
 
   const cacheBust = `?v=${Date.now()}`;
